@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>genera-qr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Ingresa texto QR</ion-label>
+    <ion-input [(ngModel)]="qrData"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="generateQRCode()">Generar QR</ion-button>
+
+  
+  <div *ngIf="createdCode">
+
+    <qrcode [qrdata]="createdCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>
